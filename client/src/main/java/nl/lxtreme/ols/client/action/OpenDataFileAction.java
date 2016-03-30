@@ -83,10 +83,14 @@ public class OpenDataFileAction extends BaseAction
 
       try
       {
-//        File tempFile = File.createTempFile("tmp", ".txt", new File("."));
-        File tempFile = new File("qwe");
-        rebuildFileToTempfile(file, tempFile);
-        getController().openDataFile( tempFile );
+        /* ------- Dataparser ------- */
+        if (file.getName().endsWith(".ols")) {
+          getController().openDataFile( file );
+        } else {
+          File processedFile = rebuildFileToTempfile(file);
+          getController().openDataFile( processedFile );
+        }
+        /* ------- end Dataparser ------- */
       }
       catch ( IOException exception )
       {
@@ -100,8 +104,11 @@ public class OpenDataFileAction extends BaseAction
     }
   }
 
-  private void rebuildFileToTempfile(File file, File tempfile) throws IOException
+  /* ------- Dataparser ------- */
+  private File rebuildFileToTempfile(File file) throws IOException
   {
+    // File tempFile = new File("tmp");
+    File tempfile = File.createTempFile("tmp", ".txt", new File("."));
     final FileWriter fw = new FileWriter( tempfile );
     BufferedWriter tempfile_writer = new BufferedWriter(fw);
     final FileReader file_reader = new FileReader( file );
@@ -123,7 +130,9 @@ public class OpenDataFileAction extends BaseAction
       tempfile_writer.write(Integer.toString(i));
       tempfile_writer.write("\n");
     }
+    return tempfile;
   }
+  /* ------- end Dataparser ------- */
 }
 
 /* EOF */
