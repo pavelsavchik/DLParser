@@ -40,8 +40,8 @@ public class HostResourceProperties implements HostProperties
 
   private static final String HOST_PROPERTIES = "/host.properties";
 
-  private static final String SHORT_NAME = "LogicSniffer";
-  private static final String FULL_NAME = SHORT_NAME.concat( " - Logic Analyzer Client" );
+  private static final String SHORT_NAME = "DLParser";
+  private static final String FULL_NAME = SHORT_NAME.concat( " - Data Logger Parser" );
 
   // VARIABLES
 
