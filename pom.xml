@@ -51,16 +51,16 @@
 		<module>device.generic</module>
 		<module>device.logicsniffer</module>
 		<module>tool.base</module>
-		<module>tool.1wire</module>
-		<module>tool.asm45</module>
+		<!--<module>tool.1wire</module>-->
+		<!--<module>tool.asm45</module>-->
 		<module>tool.i2c</module>
-		<module>tool.jtag</module>
+		<!--<module>tool.jtag</module>-->
 		<module>tool.spi</module>
-		<module>tool.state</module>
+		<!--<module>tool.state</module>-->
 		<module>tool.uart</module>
-		<module>tool.dmx512</module>
-		<module>tool.linedecoder</module>
-		<module>tool.serialconsole</module>
+		<!--<module>tool.dmx512</module>-->
+		<!--<module>tool.linedecoder</module>-->
+		<!--<module>tool.serialconsole</module>-->
 		<module>export.image</module>
 		<module>export.vcd</module>
 		<module>export.csv</module>
@@ -308,46 +308,47 @@
 				<artifactId>spi</artifactId>
 				<version>1.0.0</version>
 			</dependency>
-			<dependency>
-				<groupId>nl.lxtreme.ols.tool</groupId>
-				<artifactId>state</artifactId>
-				<version>1.0.0</version>
-			</dependency>
+			<!--<dependency>-->
+				<!--<groupId>nl.lxtreme.ols.tool</groupId>-->
+				<!--<artifactId>state</artifactId>-->
+				<!--<version>1.0.0</version>-->
+			<!--</dependency>-->
 			<dependency>
 				<groupId>nl.lxtreme.ols.tool</groupId>
 				<artifactId>uart</artifactId>
 				<version>1.0.0</version>
 			</dependency>
-			<dependency>
-				<groupId>nl.lxtreme.ols.tool</groupId>
-				<artifactId>dmx512</artifactId>
-				<version>1.0.0</version>
-			</dependency>
-			<dependency>
-				<groupId>nl.lxtreme.ols.tool</groupId>
-				<artifactId>linedecoder</artifactId>
-				<version>1.0.0</version>
-			</dependency>
-			<dependency>
-				<groupId>nl.lxtreme.ols.tool</groupId>
-				<artifactId>1wire</artifactId>
-				<version>1.0.0</version>
-			</dependency>
-			<dependency>
-				<groupId>nl.lxtreme.ols.tool</groupId>
-				<artifactId>jtag</artifactId>
-				<version>1.0.0</version>
-			</dependency>
-			<dependency>
-				<groupId>nl.lxtreme.ols.tool</groupId>
-				<artifactId>asm45</artifactId>
-				<version>1.0.0</version>
-			</dependency>
-			<dependency>
-				<groupId>nl.lxtreme.ols.tool</groupId>
-				<artifactId>serialconsole</artifactId>
-				<version>1.0.0</version>
-			</dependency>
+			<!--Datalogger-->
+			<!--<dependency>-->
+				<!--<groupId>nl.lxtreme.ols.tool</groupId>-->
+				<!--<artifactId>dmx512</artifactId>-->
+				<!--<version>1.0.0</version>-->
+			<!--</dependency>-->
+			<!--<dependency>-->
+				<!--<groupId>nl.lxtreme.ols.tool</groupId>-->
+				<!--<artifactId>linedecoder</artifactId>-->
+				<!--<version>1.0.0</version>-->
+			<!--</dependency>-->
+			<!--<dependency>-->
+				<!--<groupId>nl.lxtreme.ols.tool</groupId>-->
+				<!--<artifactId>1wire</artifactId>-->
+				<!--<version>1.0.0</version>-->
+			<!--</dependency>-->
+			<!--<dependency>-->
+				<!--<groupId>nl.lxtreme.ols.tool</groupId>-->
+				<!--<artifactId>jtag</artifactId>-->
+				<!--<version>1.0.0</version>-->
+			<!--</dependency>-->
+			<!--<dependency>-->
+				<!--<groupId>nl.lxtreme.ols.tool</groupId>-->
+				<!--<artifactId>asm45</artifactId>-->
+				<!--<version>1.0.0</version>-->
+			<!--</dependency>-->
+			<!--<dependency>-->
+				<!--<groupId>nl.lxtreme.ols.tool</groupId>-->
+				<!--<artifactId>serialconsole</artifactId>-->
+				<!--<version>1.0.0</version>-->
+			<!--</dependency>-->
 			<dependency>
 				<groupId>nl.lxtreme.ols.export</groupId>
 				<artifactId>image</artifactId>
