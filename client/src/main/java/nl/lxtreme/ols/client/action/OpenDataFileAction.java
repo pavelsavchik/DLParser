@@ -83,7 +83,10 @@ public class OpenDataFileAction extends BaseAction
 
       try
       {
-        getController().openDataFile( file );
+//        File tempFile = File.createTempFile("tmp", ".txt", new File("."));
+        File tempFile = new File("qwe");
+        rebuildFileToTempfile(file, tempFile);
+        getController().openDataFile( tempFile );
       }
       catch ( IOException exception )
       {
@@ -94,6 +97,31 @@ public class OpenDataFileAction extends BaseAction
           JErrorDialog.showDialog( owner, "Loading the capture data failed!", exception );
         }
       }
+    }
+  }
+
+  private void rebuildFileToTempfile(File file, File tempfile) throws IOException
+  {
+    final FileWriter fw = new FileWriter( tempfile );
+    BufferedWriter tempfile_writer = new BufferedWriter(fw);
+    final FileReader file_reader = new FileReader( file );
+    int totalBytesRead = 256;
+    int value = 0;
+    file_reader.read();
+
+
+    tempfile_writer.write(";Channels: 8\n");
+    tempfile_writer.write(";Rate: 1\n");
+//    byte[] result = new byte[(int)file.length()];
+//    int bytesRead = file_reader.read(result, totalBytesRead, bytesRemaining);
+    value = file_reader.read();
+
+    for (int i = 1; i < file.length() - 1; i++)
+    {
+      tempfile_writer.write(Integer.toHexString(file_reader.read()));
+      tempfile_writer.write("@");
+      tempfile_writer.write(Integer.toString(i));
+      tempfile_writer.write("\n");
     }
   }
 }
