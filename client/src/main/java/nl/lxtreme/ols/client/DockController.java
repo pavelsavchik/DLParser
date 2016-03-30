@@ -216,9 +216,11 @@ public class DockController implements IMeasurementListener
    */
   void start()
   {
-    registerToolWindow( this.cursorDetails, DockController.GROUP_DEFAULT );
-    registerToolWindow( this.captureDetails, DockController.GROUP_DEFAULT );
-    registerToolWindow( this.measurementDetails, DockController.GROUP_DEFAULT );
+//    Dataparser
+//    registerToolWindow( this.cursorDetails, DockController.GROUP_DEFAULT );
+//    registerToolWindow( this.captureDetails, DockController.GROUP_DEFAULT );
+//    registerToolWindow( this.measurementDetails, DockController.GROUP_DEFAULT );
+//    end Dataparser
 
     File dataFile = new File( this.dataStorage, "dock.settings" );
     if ( ( this.dataStorage == null ) || !dataFile.exists() )

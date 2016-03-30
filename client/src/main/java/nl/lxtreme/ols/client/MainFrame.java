@@ -1014,11 +1014,12 @@ public final class MainFrame extends JFrame implements Closeable, PropertyChange
     fileMenu.setMnemonic( 'F' );
     bar.add( fileMenu );
 
-    fileMenu.add( this.controller.getAction( NewProjectAction.ID ) );
-    fileMenu.add( this.controller.getAction( OpenProjectAction.ID ) );
-    fileMenu.add( this.controller.getAction( SaveProjectAction.ID ) );
-    fileMenu.add( this.controller.getAction( SaveProjectAsAction.ID ) );
-    fileMenu.addSeparator();
+    //(DataParser)
+//    fileMenu.add( this.controller.getAction( NewProjectAction.ID ) );
+//    fileMenu.add( this.controller.getAction( OpenProjectAction.ID ) );
+//    fileMenu.add( this.controller.getAction( SaveProjectAction.ID ) );
+//    fileMenu.add( this.controller.getAction( SaveProjectAsAction.ID ) );
+//    fileMenu.addSeparator();
     fileMenu.add( this.controller.getAction( OpenDataFileAction.ID ) );
     fileMenu.add( this.controller.getAction( SaveDataFileAction.ID ) );
     fileMenu.addSeparator();
@@ -1031,110 +1032,116 @@ public final class MainFrame extends JFrame implements Closeable, PropertyChange
       fileMenu.add( this.controller.getAction( ExitAction.ID ) );
     }
 
-    if ( hostInfo.needsPreferencesMenuItem() )
-    {
-      final JMenu editMenu = bar.add( new JMenu( "Edit" ) );
-      editMenu.setMnemonic( 'E' );
-      editMenu.add( this.controller.getAction( ShowPreferencesDialogAction.ID ) );
-    }
+//    DataParser TODO: Make visible
+//    if ( hostInfo.needsPreferencesMenuItem() )
+//    {
+//      final JMenu editMenu = bar.add( new JMenu( "Edit" ) );
+//      editMenu.setMnemonic( 'E' );
+//      editMenu.add( this.controller.getAction( ShowPreferencesDialogAction.ID ) );
+//    }
 
-    JMenu captureMenu = bar.add( new JMenu( "Capture" ) );
-    captureMenu.setMnemonic( 'C' );
+//    JMenu captureMenu = bar.add( new JMenu( "Capture" ) );
+//    captureMenu.setMnemonic( 'C' );
+//
+//    this.deviceMenu = new JMenu( "Device" );
+//    this.deviceMenu.setMnemonic( 'D' );
+//    this.deviceMenu.addMenuListener( new DeviceMenuBuilder( this.controller, this ) );
+//
+//    captureMenu.add( this.controller.getAction( CaptureAction.ID ) );
+//    captureMenu.add( this.controller.getAction( RepeatCaptureAction.ID ) );
+//    captureMenu.add( this.controller.getAction( CancelCaptureAction.ID ) );
+//    captureMenu.addSeparator();
+//    captureMenu.add( this.deviceMenu );
 
-    this.deviceMenu = new JMenu( "Device" );
-    this.deviceMenu.setMnemonic( 'D' );
-    this.deviceMenu.addMenuListener( new DeviceMenuBuilder( this.controller, this ) );
+    //(DataParser)
+//    final JMenu diagramMenu = bar.add( new JMenu( "Diagram" ) );
+//    diagramMenu.setMnemonic( 'D' );
+//
+//    diagramMenu.add( this.controller.getAction( ZoomInAction.ID ) );
+//    diagramMenu.add( this.controller.getAction( ZoomOutAction.ID ) );
+//    diagramMenu.add( this.controller.getAction( ZoomOriginalAction.ID ) );
+//    diagramMenu.add( this.controller.getAction( ZoomAllAction.ID ) );
+//    diagramMenu.addSeparator();
+//    diagramMenu.add( this.controller.getAction( GotoTriggerAction.ID ) );
+//    diagramMenu.addSeparator();
+//    diagramMenu.add( new JCheckBoxMenuItem( this.controller.getAction( SetCursorModeAction.ID ) ) );
+//    diagramMenu.add( new JCheckBoxMenuItem( this.controller.getAction( SetCursorSnapModeAction.ID ) ) );
+//    diagramMenu.add( this.controller.getAction( DeleteAllCursorsAction.ID ) );
+//    diagramMenu.add( this.controller.getAction( GotoFirstCursorAction.ID ) );
+//    diagramMenu.add( this.controller.getAction( GotoLastCursorAction.ID ) );
 
-    captureMenu.add( this.controller.getAction( CaptureAction.ID ) );
-    captureMenu.add( this.controller.getAction( RepeatCaptureAction.ID ) );
-    captureMenu.add( this.controller.getAction( CancelCaptureAction.ID ) );
-    captureMenu.addSeparator();
-    captureMenu.add( this.deviceMenu );
-
-    final JMenu diagramMenu = bar.add( new JMenu( "Diagram" ) );
-    diagramMenu.setMnemonic( 'D' );
-
-    diagramMenu.add( this.controller.getAction( ZoomInAction.ID ) );
-    diagramMenu.add( this.controller.getAction( ZoomOutAction.ID ) );
-    diagramMenu.add( this.controller.getAction( ZoomOriginalAction.ID ) );
-    diagramMenu.add( this.controller.getAction( ZoomAllAction.ID ) );
-    diagramMenu.addSeparator();
-    diagramMenu.add( this.controller.getAction( GotoTriggerAction.ID ) );
-    diagramMenu.addSeparator();
-    diagramMenu.add( new JCheckBoxMenuItem( this.controller.getAction( SetCursorModeAction.ID ) ) );
-    diagramMenu.add( new JCheckBoxMenuItem( this.controller.getAction( SetCursorSnapModeAction.ID ) ) );
-    diagramMenu.add( this.controller.getAction( DeleteAllCursorsAction.ID ) );
-    diagramMenu.add( this.controller.getAction( GotoFirstCursorAction.ID ) );
-    diagramMenu.add( this.controller.getAction( GotoLastCursorAction.ID ) );
-
-    this.cursorsMenu = new JMenu( "Cursors" );
-    this.cursorsMenu.setMnemonic( 'C' );
-    this.cursorsMenu.addMenuListener( new CursorMenuBuilder( this.controller ) );
-    diagramMenu.add( this.cursorsMenu );
-
-    diagramMenu.addSeparator();
-    diagramMenu.add( this.controller.getAction( RemoveAnnotationsAction.ID ) );
-    diagramMenu.add( this.controller.getAction( ShowManagerViewAction.ID ) );
+//    this.cursorsMenu = new JMenu( "Cursors" );
+//    this.cursorsMenu.setMnemonic( 'C' );
+//    this.cursorsMenu.addMenuListener( new CursorMenuBuilder( this.controller ) );
+//    diagramMenu.add( this.cursorsMenu );
+//
+//    diagramMenu.addSeparator();
+//    diagramMenu.add( this.controller.getAction( RemoveAnnotationsAction.ID ) );
+//    diagramMenu.add( this.controller.getAction( ShowManagerViewAction.ID ) );
+//    end DataParser
 
     this.toolsMenu = bar.add( new JMenu( "Tools" ) );
     this.toolsMenu.setMnemonic( 'T' );
-    this.toolsMenu.add( new JCheckBoxMenuItem( this.controller.getAction( SetMeasurementModeAction.ID ) ) ) //
-    .putClientProperty( PERSISTENT_MENU_ITEM_KEY, Boolean.TRUE );
-    this.toolsMenu.addSeparator();
+//    this.toolsMenu.add( new JCheckBoxMenuItem( this.controller.getAction( SetMeasurementModeAction.ID ) ) ) //
+//    .putClientProperty( PERSISTENT_MENU_ITEM_KEY, Boolean.TRUE );
+//    this.toolsMenu.addSeparator();
     this.toolsMenu.addMenuListener( new ToolMenuBuilder( this.controller ) );
 
-    if ( hostInfo.isMacOS() )
-    {
-      this.windowMenu = bar.add( new JMenu( "Window" ) );
-      this.windowMenu.setMnemonic( 'W' );
 
-      // Add two items that remain constant for the remainder of the lifetime of
-      // this client...
-      this.windowMenu.add( new JMenuItem( StandardActionFactory.createCloseAction() ) ) //
-      .putClientProperty( PERSISTENT_MENU_ITEM_KEY, Boolean.TRUE );
-      this.windowMenu.add( new JMenuItem( new MinimizeWindowAction() ) ) //
-      .putClientProperty( PERSISTENT_MENU_ITEM_KEY, Boolean.TRUE );
+//    (DataParser)
+//    if ( hostInfo.isMacOS() )
+//    {
+//      this.windowMenu = bar.add( new JMenu( "Window" ) );
+//      this.windowMenu.setMnemonic( 'W' );
+//
+//      // Add two items that remain constant for the remainder of the lifetime of
+//      // this client...
+//      this.windowMenu.add( new JMenuItem( StandardActionFactory.createCloseAction() ) ) //
+//      .putClientProperty( PERSISTENT_MENU_ITEM_KEY, Boolean.TRUE );
+//      this.windowMenu.add( new JMenuItem( new MinimizeWindowAction() ) ) //
+//      .putClientProperty( PERSISTENT_MENU_ITEM_KEY, Boolean.TRUE );
+//
+//      this.windowMenu.addSeparator();
+//
+//      this.windowMenu.addMenuListener( new WindowMenuBuilder( this.controller ) );
+//    }
 
-      this.windowMenu.addSeparator();
-
-      this.windowMenu.addMenuListener( new WindowMenuBuilder( this.controller ) );
-    }
-
-    final JMenu helpMenu = bar.add( new JMenu( "Help" ) );
-    helpMenu.setMnemonic( 'H' );
-    helpMenu.add( this.controller.getAction( ShowBundlesAction.ID ) );
-
-    if ( hostInfo.needsAboutMenuItem() )
-    {
-      helpMenu.addSeparator();
-      helpMenu.add( this.controller.getAction( HelpAboutAction.ID ) );
-    }
+//    final JMenu helpMenu = bar.add( new JMenu( "Help" ) );
+//    helpMenu.setMnemonic( 'H' );
+//    helpMenu.add( this.controller.getAction( ShowBundlesAction.ID ) );
+//
+//    if ( hostInfo.needsAboutMenuItem() )
+//    {
+//      helpMenu.addSeparator();
+//      helpMenu.add( this.controller.getAction( HelpAboutAction.ID ) );
+//    }
 
     final JToolBar toolbar = new JToolBar();
     toolbar.setRollover( true );
     toolbar.setFloatable( false );
 
-    toolbar.add( this.controller.getAction( OpenProjectAction.ID ) );
-    toolbar.add( this.controller.getAction( SaveProjectAction.ID ) );
-    toolbar.addSeparator();
+    //(DataParser)
+//    toolbar.add( this.controller.getAction( OpenProjectAction.ID ) );
+//    toolbar.add( this.controller.getAction( SaveProjectAction.ID ) );
+//    toolbar.addSeparator();
 
-    toolbar.add( this.controller.getAction( CaptureAction.ID ) );
-    toolbar.add( this.controller.getAction( CancelCaptureAction.ID ) );
-    toolbar.add( this.controller.getAction( RepeatCaptureAction.ID ) );
-    toolbar.addSeparator();
+//    toolbar.add( this.controller.getAction( CaptureAction.ID ) );
+//    toolbar.add( this.controller.getAction( CancelCaptureAction.ID ) );
+//    toolbar.add( this.controller.getAction( RepeatCaptureAction.ID ) );
+//    toolbar.addSeparator();
 
     toolbar.add( this.controller.getAction( ZoomInAction.ID ) );
     toolbar.add( this.controller.getAction( ZoomOutAction.ID ) );
     toolbar.add( this.controller.getAction( ZoomOriginalAction.ID ) );
     toolbar.add( this.controller.getAction( ZoomAllAction.ID ) );
-    toolbar.addSeparator();
-
-    toolbar.add( this.controller.getAction( GotoTriggerAction.ID ) );
-    for ( int c = 0; c < Ols.MAX_CURSORS; c++ )
-    {
-      toolbar.add( this.controller.getAction( GotoNthCursorAction.getID( c ) ) );
-    }
-
+//    toolbar.addSeparator();
+//
+//    toolbar.add( this.controller.getAction( GotoTriggerAction.ID ) );
+//    for ( int c = 0; c < Ols.MAX_CURSORS; c++ )
+//    {
+//      toolbar.add( this.controller.getAction( GotoNthCursorAction.getID( c ) ) );
+//    }
+//
     return toolbar;
   }
 
